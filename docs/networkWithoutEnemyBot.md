@@ -1,5 +1,47 @@
-<h1><code>networkWithoutEnemyBot</code> Class</h1><h2>Description</h2><p>The <code>networkWithoutEnemyBot</code> class is a class that handles a network of neural networks for a game with no enemy bot.</p><h2>Arguments</h2><p>The <code>networkWithoutEnemyBot</code> class takes the following arguments:</p><ul><li><code>genomes</code>: A list of genomes used to create the neural networks.</li><li><code>config</code>: A <code>neat</code> configuration object used to configure the neural networks.</li><li><code>bots</code>: A list of bots in the game.</li><li><code>balls</code>: A list of balls in the game.</li></ul><h2>Attributes</h2><p>The <code>networkWithoutEnemyBot</code> class has the following attributes:</p><ul><li><code>bots</code>: A list of bots in the game.</li><li><code>balls</code>: A list of balls in the game.</li><li><code>genomes</code>: A list of genomes used to create the neural networks.</li><li><code>config</code>: A <code>neat</code> configuration object used to configure the neural networks.</li><li><code>generation</code>: The generation number of the networks.</li><li><code>nets</code>: A list of neural networks created from the genomes.</li><li><code>ge</code>: A list of genomes.</li></ul><h2>Methods</h2><p>The <code>networkWithoutEnemyBot</code> class has the following methods:</p><ul><li><code>get_output</code>: This method takes a <code>Window</code> object as input and returns a list of outputs from the neural networks. It calculates the output of each neural network by activating it with inputs derived from the <code>bots</code>, <code>balls</code>, and <code>Window</code> objects. It also increments the <code>generation</code> attribute by 1.</li></ul><h2>Example</h2><p>Here is an example of how to use the <code>networkWithoutEnemyBot</code> class:</p>
+`networkWithoutEnemyBot` Class
+==============================
+
+Description
+-----------
+
+The `networkWithoutEnemyBot` class is a class that handles a network of neural networks for a game with no enemy bot.
+
+Arguments
+---------
+
+The `networkWithoutEnemyBot` class takes the following arguments:
+
+*   `genomes`: A list of genomes used to create the neural networks.
+*   `config`: A `neat` configuration object used to configure the neural networks.
+*   `bots`: A list of bots in the game.
+*   `balls`: A list of balls in the game.
+
+Attributes
+----------
+
+The `networkWithoutEnemyBot` class has the following attributes:
+
+*   `bots`: A list of bots in the game.
+*   `balls`: A list of balls in the game.
+*   `genomes`: A list of genomes used to create the neural networks.
+*   `config`: A `neat` configuration object used to configure the neural networks.
+*   `generation`: The generation number of the networks.
+*   `nets`: A list of neural networks created from the genomes.
+*   `ge`: A list of genomes.
+
+Methods
+-------
+
+The `networkWithoutEnemyBot` class has the following methods:
+
+*   `get_output`: This method takes a `Window` object as input and returns a list of outputs from the neural networks. It calculates the output of each neural network by activating it with inputs derived from the `bots`, `balls`, and `Window` objects. It also increments the `generation` attribute by 1.
+
+Example
+-------
+
+Here is an example of how to use the `networkWithoutEnemyBot` class:
 ``` python
+
 import neat
 
 # Create a networkWithoutEnemyBot object
@@ -7,4 +49,5 @@ nw = networkWithoutEnemyBot(genomes, config, bots, balls)
 
 # Get the outputs from the neural networks
 outputs = nw.get_output(Window)
+
 ```
