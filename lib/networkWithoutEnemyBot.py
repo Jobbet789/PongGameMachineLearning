@@ -1,3 +1,6 @@
+# A class that handles the network without enemy bot
+import neat
+
 class networkWithoutEnemyBot:
 	def __init__(self, genomes: list, config, bots: list, balls: list):
 		# arguments for the class 
@@ -5,6 +8,8 @@ class networkWithoutEnemyBot:
 		self.balls = balls # list of balls
 		self.genomes = genomes # list of genomes
 		self.config = config # neat configuration
+
+		self.generation = -1 # generation number
 
 
 		
@@ -19,9 +24,18 @@ class networkWithoutEnemyBot:
 			self.ge.append(g) # Add genome to list of genomes
 
 
-	def get_output(self) -> list:
-		# get the output of the neural network
-		outputs: list = []
-		for x, net in enumerate(self.nets):
+	def get_output(self, Window) -> list: # get the output of the neural network
+		self.generation += 1 # increase the generation number
+
+		outputs: list = [] # list of outputs
+		for x, net in enumerate(self.nets): # for each network
+			# get the output of the network
+			output: list = net.activate([self.bots[x].y - self.balls[x].y, 
+						  self.bots[x].x - self.balls[x].x,
+						  self.balls[x].direction]) 
+			
+			outputs.append(output) # add the output list to the list of outputs
+
+		return outputs # return the list of outputs
 
 			
