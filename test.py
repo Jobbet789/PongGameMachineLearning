@@ -12,7 +12,7 @@ from lib import middleLine
 # winner file name
 winnerFile = "winner.pkl"
 # config file
-config_path = "config-feedforward.txt"
+config_path = "assets/config-feedforward.txt"
 
 
 # creating objects
@@ -77,7 +77,7 @@ def trainBotWithoutEnemyBot(genomes, config):
 		for x, bot in enumerate(bots):
 			bot.move()
 			ge[x].fitness += 0.05
-			output = nets[x].activate([bot.y - balls[x].y, bot.x - balls[x].x, Window.WIN_HEIGHT, Window.WIN_WIDTH])
+			output = nets[x].activate([bot.y - balls[x].y, bot.x - balls[x].x])
 
 			bot.direction = 0
 
